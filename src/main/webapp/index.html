@@ -48,50 +48,70 @@
     <![endif]-->
 </head>
 <body ng-controller="MainController" ng-cloak>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-       
-          <a ng-show="!league.logoUrl" class="navbar-brand" href="#" ng-bind="league.name"></a>
-          <a ng-show="league.logoUrl" class="navbar-brand" href="#"><img ng-src="{{league.logoUrl}}"/></a>
-          <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" >
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div collapse="navCollapsed" data-extraleague-navbar class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li data-match-route="/newGame"><a ng-click="navigateTo('newGame')">New Game</a></li>
-            <li data-match-route="/ranking"><a ng-click="navigateTo('ranking')">Ranking</a></li>
-            <li data-match-route="/meetingPoint"><a ng-click="navigateTo('meetingPoint')">Meetingpoint</a></li>
-            <li data-match-route="/openGames"><a ng-click="navigateTo('openGames')">Open Games</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li data-match-route="/about"><a ng-click="navigateTo('about')">About Extraleague</a></li>
-	            <li data-match-route="/highlights"><a ng-click="navigateTo('highlights')">Highlights</a></li>
-	            <li data-match-route="/headToHead"><a ng-click="navigateTo('headToHead')">Head-To-Head</a></li>
-	            <li data-match-route="/playedGames"><a ng-click="navigateTo('playedGames')">Today</a></li>
-	            <li data-match-route="/stats"><a ng-click="navigateTo('stats')">Statistics</a></li>
-	            <li data-match-route="/registration"><a ng-click="navigateTo('registration')">Register</a></li>
-              </ul>
-            </li>
-            <li ng-show="isCurrentUserLoading"> <a href="#"><img src="images/ajax-loader.gif" /></a></li>
-            <li ng-show="!isCurrentUserLoading && !currentUser.loggedIn"><a href="{{currentUser.loginUrl}}" target="_self">Login</a></li>
-            <li ng-show="!isCurrentUserLoading && currentUser.loggedIn" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{currentUser.nickname}} <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li data-match-route="/account"><a ng-click="navigateTo('account')"><i class="fa fa-sliders"></i> Account</a></li>
-                <li data-match-route="/playerStats"><a ng-click="navigateTo('playerStats')"><i class="fa fa-bar-chart"></i> Statistics</a></li>
-                <li ng-show="currentUser.admin" data-match-route="/admin"><a ng-click="navigateTo('admin')"><i class="fa fa-list"></i> League Admin</a></li>
-                <li><a href="{{currentUser.logoutUrl}}"><i class="fa fa-power-off"></i> Logout</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+
+/ping
+/version
+/tables
+/modes
+/ranking
+/rankings/tags/{tag}
+/games
+/gamePreview
+/openGames
+/playedGames
+/games/{gameId}
+/games/{gameId}/matches
+/games/{gameId}/summary
+/challengers/{table}
+/challengers/{table}/{id}
+/winners/{table}
+/players
+/players/{player}
+/currentPlayerStats
+/timeseries/{player}
+/meetingPointPlayers
+/meetingPointPlayers/{playerId}
+/statistics
+/notificationToken
+/badges
+/specialEvents
+/playerNetwork
+/mutations
+/league
+/league/style
+/blobs
+/error
+/validate/player
+
+
+
+/updateRankings
+/updateRankingsCron
+/admin/updateEternalRankings
+/admin/updateEternalRankingsCron
+/cleanRankings
+/cleanRankingsCron
+/updateStatistics
+/updateStatisticsCron
+
+("/migrateMatches
+
+
+/admin/league/{leagueName}/{domain}
+/admin/migration/namespace
+/admin/migration/namespace/task
+/admin/league/setWebhook
+/admin/export/matches
+
+
+/leagueAdmin/playerUsers
+/leagueAdmin/playerUsers/{player}
+/leagueAdmin/league
+
+/notifications/endOfGame/{gameId}
+/currentUser
+/authUrl
+/playerUsers
 
     <div class="container">
 	  <div ng-view></div>
