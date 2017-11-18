@@ -4,7 +4,8 @@
     <module>default</module>
     <version>4</version>
     <threadsafe>true</threadsafe>
- 
+	<runtime>java8</runtime>
+
     <system-properties>
         <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
     </system-properties>
